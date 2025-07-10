@@ -23,7 +23,7 @@ const { title, videoId, channelName, views, time, thumbnail, description } = rou
               src={`https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1`}
               title={title || 'YouTube video'}
        
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow=" autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           ) : (
