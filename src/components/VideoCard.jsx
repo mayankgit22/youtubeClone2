@@ -36,10 +36,10 @@ as={`/video/${encodeURIComponent(props.title)}`
                     <div className='grid col-span-10 ml-2  '>
                         <h2 className=' text-sm md:text-md justify-start '> {props.title }</h2>
                         <div className='grid text-sm text-red-600 '>
-                          <p className='col-span-2'>{props.channelName}</p>
-                          <div> <p className='  text-sm text-black'>{props.views}</p>
+                          <p className='col-span-2 text-left'>{props.channelName}</p>
+                      
+                         
                         <p className='text-sm text-black/80 text-left'>{props.time}</p></div>
-                       </div>
                         
 
         
