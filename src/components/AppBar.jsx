@@ -1,6 +1,6 @@
+'use client'
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-
 function AppBar() {
   const [showSearch, setShowSearch] = useState(false);
   const [searchquery, setSearchQuery] = useState('');
@@ -18,16 +18,22 @@ function AppBar() {
     if (searchquery.trim() !== '') {
       const finding = searchquery.split(' ').join('').toLowerCase();
 
-      // Perform router navigation to search page with query
-      router.push(`/search?query=${encodeURIComponent(searchquery)}`);
-      // console.log(`Searching for: ${searchquery}`);
 
-      setShowSearch(false); // Hide search input after search
+      router.push(`/search?query=${encodeURIComponent(finding)}`);
+
+
+      setShowSearch(false); 
+    }
+  };
+    const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
     }
   };
 
   return (
-    <div className="grid grid-cols-10 p-4 gap-2 bg-black text-white shadow-md items-center rounded-full">
+    <div className=' h-[15vh]  p-2    w-[100%]  flex justify-center items-center'>
+    <div className="grid grid-cols-10 p-4 gap-2 bg-black text-white shadow-md items-center rounded-full  w-[90%] ">
       {/* YouTube Logo */}
       <div className="col-span-2">
         <a href="/" rel="noreferrer">
@@ -47,11 +53,13 @@ function AppBar() {
           // style={{ display: showSearch ? 'block' : 'none' }}
           onChange={(e) => setSearchQuery(e.target.value)}
           value={searchquery}
+               onKeyDown={handleKeyDown}
           className=" bg-gray-900 p-2 text-md w-full m-1 rounded-3xl transition-all duration-200 ease-in-out sm:block md:block lg:block"
         />
         <button
           className="bg-blue-500 text-sm text-white p-2 rounded-3xl lg:text-md"
           onClick={handleSearch}
+          type='submit'
         >
           Search
         </button>
@@ -78,7 +86,7 @@ function AppBar() {
           />
         </a>
       </div>
-    </div>
+    </div></div>
   );
 }
 
