@@ -34,7 +34,7 @@ as={`/video/${encodeURIComponent(props.title)}`
                 <div className='grid grid-cols-12 p-0 w-full justify-center  mt-3'>
                     <img src = {props.channelImage?props.channelImag:'https://cdn-icons-png.flaticon.com/512/149/149071.png'} alt="H" className='w-12 col-span-2 h-12 max-h-100 rounded-3xl border-blue-700 border-2 justify-start  mr-0 ml-2' />
                     <div className='grid col-span-10 ml-2  '>
-                        <h2 className=' text-sm md:text-md justify-start '> {props.title }</h2>
+                        <h2 className=' text-sm md:text-md justify-start text-left '> {props.title }</h2>
                         <div className='grid text-sm text-red-600 '>
                           <p className='col-span-2 text-left'>{props.channelName}</p>
                       
